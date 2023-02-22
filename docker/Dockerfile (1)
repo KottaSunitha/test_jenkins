@@ -1,0 +1,19 @@
+FROM tomcat:9.0.48
+
+MAINTAINER info@ovaledge.com(optional)
+
+ENV DEFAULT_OVALEDGE_BIGQUERY_MAX_CONNECTIONS=10
+
+COPY ovaledge.war /root/temp/ovaledge.war
+
+COPY catalina.properties /root/temp/catalina.properties
+
+RUN mkdir -p /usr/local/tomcat/conf/saml
+
+COPY keystore.jks /usr/local/tomcat/conf/saml/keystore.jks
+
+EXPOSE 8080
+
+COPY run.sh /run.sh
+
+ENTRYPOINT ["/run.sh"]
