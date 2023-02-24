@@ -1,0 +1,36 @@
+ name: Docker Image CI
+
+
+
+
+on:
+
+  push:
+
+    branches: [ test_docker ]
+
+
+
+
+jobs:
+
+
+
+
+  build:
+
+
+
+
+    runs-on: ubuntu-latest
+
+
+
+
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - name: Build the Docker image
+
+      run:  chmod 777 Dev/run.sh && Now=Mck_Dev$(date +"%m-%d-%y-%H-%M-%S") && docker build Dev/. --file Dev/Dockerfile -t docker.io/dockertejdeep123/dockerimage:$Now && docker login docker.io -u dockertejdeep123 -p Tejdeep@1218 && docker push docker.io/dockertejdeep123/dockerimage:$Now
