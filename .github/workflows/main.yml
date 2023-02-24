@@ -33,4 +33,4 @@ jobs:
 
     - name: Build the Docker image
 
-      run:  chmod 777 Dev/run.sh && Now=Mck_Dev$(date +"%m-%d-%y-%H-%M-%S") && docker build Dev/. --file Dev/Dockerfile -t docker.io/dockertejdeep123/dockerimage:$Now && docker login docker.io -u dockertejdeep123 -p Tejdeep@1218 && docker push docker.io/dockertejdeep123/dockerimage:$Now
+      run:  chmod 777 Dev/run.sh && Now=Mck_Dev$(date +"%m-%d-%y-%H-%M-%S") && docker build Dev/. --file Dev/Dockerfile -t docker.io/dockertejdeep123/dockerimage:$Now && docker login docker.io -u sunitha.kotta@ovaledge.com -p Ovaledge@9795 && docker push docker.io/dockertejdeep123/dockerimage:$Now
