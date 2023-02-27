@@ -49,7 +49,7 @@ COPY ngdbc-2.2.16.jar /home/ovaledge/third_party_jars/ngdbc-2.2.16.jar
 #COPY glowroot/lib/glowroot-embedded-collector.jar /usr/local/tomcat/conf/glowroot/lib/glowroot-embedded-collector.jar
 #COPY glowroot/lib/glowroot-logging-logstash.jar /usr/local/tomcat/conf/glowroot/lib/glowroot-logging-logstash.jar
 #RUN chmod 777 -R /usr/local/tomcat/conf/glowroot/
-
+RUN wget https://jenkins-ovaledge-s3.s3.amazonaws.com/Release6.0.0.X_HDFS/119/ovaledge.war -P /root/temp/
 #COPY ovaledge.war /root/temp/ovaledge.war
 COPY catalina.properties /root/temp/catalina.properties
 COPY ap-south-1-bundle.pem  /home/ovaledge/Certificates/ap-south-1-bundle.pem
